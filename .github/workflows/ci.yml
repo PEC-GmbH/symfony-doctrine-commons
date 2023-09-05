@@ -4,9 +4,12 @@ on: [ push , pull_request ]
 
 jobs:
   build-test:
+    env:
+      SYMFONY_DEPRECATIONS_HELPER: "disabled=1"
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         version: [ '7.4', '8.2' ]
 
