@@ -27,4 +27,4 @@ jobs:
       - name: Run PHPStan for static analysis
         run: |
          mkdir -p ./build/logs
-         vendor/bin/phpstan analyse --error-format=checkstyle --no-progress -n . > build/logs/phpstan.checkstyle.xml
+         vendor/bin/phpstan analyse --error-format=checkstyle --no-progress -n -vvv . > build/logs/phpstan.checkstyle.xml
