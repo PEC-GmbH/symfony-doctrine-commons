@@ -1,0 +1,30 @@
+name: Static Analysis
+
+on: [ push , pull_request ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        version: [ '7.4', '8.2' ]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: PHP setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          ini-values: zend.assertions=1, error_reporting=-1, display_errors=On, log_errors_max_len=0
+          coverage: 'none'
+
+      - name: Update composer dependencies
+        run: composer update -o --no-interaction --no-progress
+
+      - name: Run PHPStan for static analysis
+        run: |
+         mkdir -p ./build/logs
+         vendor/bin/phpstan analyse --error-format=checkstyle --no-progress -n . > build/logs/phpstan.checkstyle.xml

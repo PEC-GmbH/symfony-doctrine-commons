@@ -1,0 +1,11 @@
+/vendor/
+.settings
+.buildpath
+/composer.lock
+/build/
+/tests/temp/
+/.idea/
+.devenv
+.direnv
+/.phpunit.result.cache
+

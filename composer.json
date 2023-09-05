@@ -1,0 +1,82 @@
+{
+  "name": "pec/doctrine-commons",
+  "type": "library",
+  "description": "Helper functions and DQL Extensions for Doctrine",
+  "keywords": [
+    "doctrine",
+    "commons",
+    "symfony",
+    "pec"
+  ],
+  "homepage": "https://github.com/PEC-GmbH/symfony-doctrine-commons",
+  "authors": [
+    {
+      "name": "Florian Meyer",
+      "email": "florian.meyer@project-engineers.de",
+      "role": "Developer",
+      "homepage": "https://www.project-engineers.de"
+    },
+    {
+      "name": "Oliver kotte",
+      "email": "oliver.kotte@project-engineers.de",
+      "role": "Developer",
+      "homepage": "https://www.project-engineers.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Pec\\DoctrineCommons\\": "src/Pec/DoctrineCommons"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pec\\DoctrineCommons\\": "tests/Pec/DoctrineCommons",
+      "Pec\\TestBundle\\": "tests/Pec/TestBundle"
+    }
+  },
+  "license": "Apache-2.0",
+  "require": {
+    "php": "^7.4||^8.0",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "doctrine/common": "^3.0",
+    "doctrine/dbal": "^2.11||^3.0",
+    "doctrine/event-manager": "^1.1||^2.0",
+    "doctrine/persistence": "^2.3||^3.0",
+    "doctrine/orm": "^2.11",
+    "salsify/json-streaming-parser": "^8.0",
+    "symfony/console": "^5.0||^6.0",
+    "symfony/http-kernel": "^5.0||^6.0",
+    "symfony/translation-contracts" : "^2.0||^3.0"
+  },
+  "require-dev": {
+    "doctrine/annotations": "^1.13||^2.0",
+    "phpunit/phpunit" : "^9.5",
+    "symfony/phpunit-bridge" : "^5.0||^6.0",
+    "stof/doctrine-extensions-bundle": "^1.3",
+    "phpstan/extension-installer": "^1.3.1",
+    "phpstan/phpstan": "^1.10.28",
+    "phpstan/phpstan-doctrine": "^1.3",
+    "phpstan/phpstan-symfony": "^1.3",
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "^4.0.x-dev",
+    "symfony/test-pack": "*"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0.x-dev"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ocramius/package-versions": false,
+      "composer/installers": true,
+      "php-http/discovery": true,
+      "oomphinc/composer-installers-extender": true,
+      "phpstan/extension-installer": true
+    }
+  }
+}

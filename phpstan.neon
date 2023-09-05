@@ -1,0 +1,12 @@
+parameters:
+  level: 6
+  tmpDir: build/cache/phpstan
+  ignoreErrors:
+    - '#has parameter \$builder with no value type specified in iterable#'
+  excludePaths:
+    analyse:
+      - vendor/*
+      - Resources/*
+    analyseAndScan:
+      - build/*
+      - node_modules/*
